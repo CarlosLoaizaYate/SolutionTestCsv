@@ -21,9 +21,9 @@ namespace TestCsv.Infraestructure.Repositories
             _dbContext.SaveChanges();
         }
 
-        public IEnumerable<UploadFile> GetFiles()
+        public List<UploadFile> GetFiles()
         {
-            return [.. _dbContext.UploadFile];
+            return _dbContext.UploadFile.ToList();
         }
 
         public UploadFile GetFilesById(int Id)

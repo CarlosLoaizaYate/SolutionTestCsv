@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TestCsv.Application\TestCsv.Application.csproj" />
+    <ProjectReference Include="..\TestCsv.Common\TestCsv.Common.csproj" />
   </ItemGroup>
 
 </Project>

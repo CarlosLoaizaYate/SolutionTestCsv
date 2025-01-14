@@ -1,0 +1,6 @@
+@TestCsvFront.Server_HostAddress = http://localhost:5250
+
+GET {{TestCsvFront.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

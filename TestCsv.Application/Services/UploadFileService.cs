@@ -66,7 +66,7 @@ namespace TestCsv.Application.Services
             }
         }
 
-        public IEnumerable<UploadFile> GetFiles()
+        public List<UploadFile> GetFiles()
         {
             return _uploadFileRepository.GetFiles();
         }

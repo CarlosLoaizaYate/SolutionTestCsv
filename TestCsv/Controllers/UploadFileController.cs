@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TestCsv.Application.IServices;
 using TestCsv.Core.Entities;
+using TestCsv.Common.Classes;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -19,16 +21,20 @@ namespace TestCsv.API.Controllers
 
         //GET: api/<ValuesController>
         [HttpGet]
-        public IEnumerable<UploadFile> Get()
+        public ResponseContract<List<UploadFile>> Get()
         {
-            return _uploadFileService.GetFiles();
+            ResponseContract<List<UploadFile>> response = new ResponseContract<List<UploadFile>>();
+            response.Data = _uploadFileService.GetFiles();
+            return response;
         }
 
         //GET api/<ValuesController>/5
         [HttpGet("{id}")]
-        public UploadFile Get(int id)
+        public ResponseContract<UploadFile> Get(int id)
         {
-            return _uploadFileService.GetFilesById(id);
+            ResponseContract<UploadFile> response = new ResponseContract<UploadFile>();
+            response.Data = _uploadFileService.GetFilesById(id);
+            return response;
         }
 
         // POST api/<ValuesController>

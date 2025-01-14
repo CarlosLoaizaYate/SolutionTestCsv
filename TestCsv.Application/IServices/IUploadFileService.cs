@@ -6,7 +6,7 @@ namespace TestCsv.Application.IServices
     public interface IUploadFileService
     {
         void UploadFile(IFormFile fileModel);
-        IEnumerable<UploadFile> GetFiles();
+        List<UploadFile> GetFiles();
         UploadFile GetFilesById(int Id);
     }
 }
